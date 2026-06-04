@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Notion Timer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="/">Notion Timer</a>
+    <a href="setup.html">Setup Guide</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Privacy Policy</h1>
+  <p>Last updated: June 2026</p>
+
+  <h2>What we collect</h2>
+  <p>Notion Timer collects and stores one piece of information on your device: the Notion access token issued when you authorize the app. This token is stored locally in the app's sandbox container using <code>tauri-plugin-store</code> and is never transmitted to any server other than Notion's own API.</p>
+
+  <p>The app also stores your database selection and property mapping locally. This is configuration data only; it contains no personal information beyond the Notion database ID you chose.</p>
+
+  <h2>What we do not collect</h2>
+  <ul>
+    <li>No analytics or usage data</li>
+    <li>No crash reports</li>
+    <li>No advertising identifiers</li>
+    <li>No data about the content of your Notion databases</li>
+    <li>No location, contacts, health, or any other device data</li>
+  </ul>
+
+  <h2>How your Notion token is used</h2>
+  <p>The access token is used solely to make requests to <code>api.notion.com</code> on your behalf — reading your database list, reading property schemas, and creating or updating time entries. All of these requests originate directly from your device; there is no backend server involved.</p>
+
+  <h2>Third-party services</h2>
+  <p>The app communicates only with Notion's API (<code>api.notion.com</code>). Notion's own privacy policy applies to the data stored in your Notion workspace. We have no relationship with Notion, Inc. and are not affiliated with them.</p>
+
+  <h2>Data retention and deletion</h2>
+  <p>All local data (token and configuration) is stored in the app's sandbox container at <code>~/Library/Application Support/com.ulumillsdezudio.notion-timer/</code>. You can delete it at any time by uninstalling the app or using the <em>Disconnect</em> option in the app's settings. To revoke Notion's authorization, go to <strong>Notion → Settings → Connections</strong> and remove Notion Timer.</p>
+
+  <h2>Children</h2>
+  <p>Notion Timer is rated 4+ and does not knowingly collect any information from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If this policy changes materially, the updated version will be posted at this URL with a revised date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy? Open an issue on <a href="https://github.com/ulumills/notion-timer">GitHub</a>.</p>
+</main>
+
+<footer>
+  <p>&copy; 2026 Notion Timer &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="setup.html">Setup Guide</a></p>
+</footer>
+
+</body>
+</html>

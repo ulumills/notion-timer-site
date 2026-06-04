@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Guide — Notion Timer</title>
+  <meta name="description" content="How to connect Notion Timer to your Notion workspace and start logging time." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="/">Notion Timer</a>
+    <a href="setup.html">Setup Guide</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Setup Guide</h1>
+  <p>Get Notion Timer connected to your workspace in about five minutes.</p>
+
+  <h2>Before you start</h2>
+  <p>You'll need a Notion database with at least these properties:</p>
+  <ul>
+    <li>A <strong>Title</strong> property (every database has one by default)</li>
+    <li>A <strong>Date</strong> property for the start time</li>
+    <li>A second <strong>Date</strong> property for the end time</li>
+    <li>A <strong>Status</strong> or <strong>Select</strong> property to mark entries as active or done</li>
+  </ul>
+  <p>Optional but supported: a <strong>Select</strong> or <strong>Relation</strong> property for projects, and a <strong>Select</strong> or <strong>Multi-select</strong> property for tags.</p>
+
+  <h2>Steps</h2>
+  <ol class="steps">
+
+    <li>
+      <div>
+        <strong>Download and open Notion Timer</strong>
+        Get it from the Mac App Store. On first launch you'll see the Connect screen.
+      </div>
+    </li>
+
+    <li>
+      <div>
+        <strong>Authorize with Notion</strong>
+        Click <em>Authorize with Notion</em>. Your browser will open Notion's permission page. Sign in if needed, choose the workspace you want to connect, and click <em>Allow access</em>. The browser will close and you'll be returned to the app automatically.
+      </div>
+    </li>
+
+    <li>
+      <div>
+        <strong>Select your database</strong>
+        The app lists every database your workspace contains. Pick the one you use for time tracking.
+      </div>
+    </li>
+
+    <li>
+      <div>
+        <strong>Map your properties</strong>
+        Tell the app which property in your database corresponds to each field:
+        <ul style="margin-top:.5rem">
+          <li><strong>Title</strong> — the entry name (usually the default title column)</li>
+          <li><strong>Start date</strong> — when the timer started</li>
+          <li><strong>End date</strong> — when it stopped</li>
+          <li><strong>Status property</strong> — which property tracks active/done state</li>
+          <li><strong>Active status value</strong> — the option that means "in progress" (e.g. <em>In Progress</em>)</li>
+          <li><strong>Done status value</strong> — the option that means "complete" (e.g. <em>Done</em>)</li>
+        </ul>
+        Project and tag fields are optional — leave them blank if your database doesn't have them.
+      </div>
+    </li>
+
+    <li>
+      <div>
+        <strong>Start tracking</strong>
+        Type a task name, optionally choose a project and tag, then click Start. A colored dot and live elapsed time will appear in your menu bar. Click Stop when you're done — the entry is updated in Notion immediately.
+      </div>
+    </li>
+
+  </ol>
+
+  <h2>Tips</h2>
+
+  <h3>Re-using recent entries</h3>
+  <p>The history feed shows your 50 most recent entries. Click the restart icon on any entry to pre-fill the timer with the same title, project, and tag.</p>
+
+  <h3>Editing entries</h3>
+  <p>Click any field in the history feed to edit it inline. Changes are saved to Notion immediately.</p>
+
+  <h3>Revoking access</h3>
+  <p>You can disconnect the app at any time via the settings gear icon → <em>Disconnect</em>. To revoke Notion's authorization entirely, go to <strong>Notion → Settings → Connections</strong> and remove Notion Timer.</p>
+
+  <div class="callout">
+    <p>Having trouble? Open an issue on <a href="https://github.com/ulumills/notion-timer">GitHub</a> and include a brief description of where you got stuck.</p>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Notion Timer &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a> &nbsp;·&nbsp; <a href="setup.html">Setup Guide</a></p>
+</footer>
+
+</body>
+</html>

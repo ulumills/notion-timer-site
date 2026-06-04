@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connecting to Notion Timer…</title>
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var code  = params.get("code");
+    var error = params.get("error");
+    if (code) {
+      window.location.href =
+        "notion-timer://oauth/callback?code=" + encodeURIComponent(code);
+    }
+    // If no code, the message below is shown as-is.
+  </script>
+</head>
+<body style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#18181b;color:#a1a1aa;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;text-align:center">
+  <div>
+    <p style="font-size:1.1rem;color:#fff;margin-bottom:.5rem">Redirecting to Notion Timer…</p>
+    <p id="err" style="font-size:.875rem">
+      <!-- shown only if no code param -->
+    </p>
+    <script>
+      if (!code) {
+        document.getElementById("err").textContent =
+          error ? "Authorization failed: " + error + ". You can close this tab." :
+                  "No authorization code received. You can close this tab.";
+      }
+    </script>
+  </div>
+</body>
+</html>

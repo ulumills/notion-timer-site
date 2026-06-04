@@ -1,0 +1,174 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:       #18181b;
+  --surface:  #27272a;
+  --border:   #3f3f46;
+  --text:     #ffffff;
+  --muted:    #a1a1aa;
+  --accent:   #ffffff;
+  --max:      720px;
+}
+
+html { font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+a:hover { opacity: .75; }
+
+/* ── Layout ── */
+
+header {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+}
+
+header nav {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+header nav .logo {
+  font-weight: 600;
+  font-size: .9rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text);
+  flex: 1;
+}
+
+header nav a {
+  font-size: .875rem;
+  color: var(--muted);
+  text-decoration: none;
+}
+header nav a:hover { color: var(--text); opacity: 1; }
+
+main {
+  flex: 1;
+  max-width: var(--max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem;
+  text-align: center;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+footer a { color: var(--muted); }
+
+/* ── Typography ── */
+
+h1 { font-size: 2.25rem; font-weight: 700; line-height: 1.2; }
+h2 { font-size: 1.25rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: .75rem; }
+h3 { font-size: 1rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: .35rem; }
+p  { color: var(--muted); margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+ul, ol { padding-left: 1.4rem; color: var(--muted); }
+li { margin-bottom: .35rem; }
+
+/* ── Hero ── */
+
+.hero { padding: 4rem 0 3rem; border-bottom: 1px solid var(--border); margin-bottom: 3rem; }
+.hero .tagline { font-size: 1.1rem; color: var(--muted); margin-top: .75rem; max-width: 480px; }
+.hero .badge {
+  display: inline-block;
+  margin-top: 2rem;
+  background: var(--text);
+  color: var(--bg);
+  padding: .6rem 1.4rem;
+  border-radius: 8px;
+  font-size: .875rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.hero .badge:hover { opacity: .85; }
+
+/* ── Feature grid ── */
+
+.features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
+
+.feature {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem 1.25rem 1rem;
+}
+
+.feature h3 { margin-top: 0; color: var(--text); }
+.feature p  { font-size: .875rem; margin: 0; }
+
+@media (max-width: 540px) {
+  .features { grid-template-columns: 1fr; }
+  h1 { font-size: 1.75rem; }
+}
+
+/* ── Steps (setup guide) ── */
+
+.steps { counter-reset: step; list-style: none; padding: 0; margin-top: 1rem; }
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+}
+.steps li:last-child { border-bottom: none; }
+.steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: .1rem;
+}
+.steps li strong { color: var(--text); display: block; margin-bottom: .2rem; }
+
+/* ── Callout ── */
+
+.callout {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+.callout p { margin: 0; font-size: .875rem; }
+
+code {
+  font-family: ui-monospace, "SF Mono", monospace;
+  font-size: .85em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: .1em .4em;
+  color: var(--text);
+}
