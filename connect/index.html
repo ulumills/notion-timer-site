@@ -5,6 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Connected — Timer for Notion</title>
   <link rel="stylesheet" href="../style.css" />
+  <script>
+    var params = new URLSearchParams(window.location.search);
+    var code  = params.get("code");
+    var error = params.get("error");
+    if (code) {
+      window.location.href =
+        "notion-timer://oauth/callback?code=" + encodeURIComponent(code);
+    }
+  </script>
 </head>
 <body>
 
@@ -17,10 +26,22 @@
 </header>
 
 <main style="display:flex;align-items:center;justify-content:center;text-align:center">
-  <div>
+  <div id="msg">
     <h1 style="font-size:1.75rem">Connection successful</h1>
     <p style="margin-top:.75rem">Your Notion workspace is now connected to Timer for Notion.<br>You can close this tab and return to the app.</p>
   </div>
+  <div id="err" style="display:none">
+    <h1 style="font-size:1.75rem">Authorization failed</h1>
+    <p id="err-detail" style="margin-top:.75rem"></p>
+  </div>
+  <script>
+    if (error) {
+      document.getElementById("msg").style.display = "none";
+      document.getElementById("err").style.display  = "";
+      document.getElementById("err-detail").textContent =
+        error + " — you can close this tab and try again.";
+    }
+  </script>
 </main>
 
 <footer>
