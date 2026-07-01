@@ -104,6 +104,18 @@ li { margin-bottom: .35rem; }
 }
 .hero .badge:hover { opacity: .85; }
 
+.hero .coming-soon {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: .875rem;
+  font-weight: 600;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .6rem 1.4rem;
+  margin-bottom: 0;
+}
+
 /* ── Feature grid ── */
 
 .features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1rem; }
