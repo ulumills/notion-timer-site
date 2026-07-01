@@ -74,6 +74,7 @@ footer {
 }
 
 footer a { color: var(--muted); }
+footer .disclaimer { font-size: .7rem; margin-top: .5rem; opacity: .6; }
 
 /* ── Typography ── */
 
